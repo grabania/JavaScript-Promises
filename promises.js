@@ -16,3 +16,5 @@ function getPresent() {
 		}, 5000); // 5 seconds
 	});
 }
+
+getPresent().then(returnToTheShop).then(buyNewiPhone).then((iPhone) => iPhone.openTypeOfWeb());
