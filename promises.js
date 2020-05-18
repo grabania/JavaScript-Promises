@@ -8,3 +8,11 @@ const promisedPresent = getPresent();
 promisedPresent
 	.then((present) => console.log('Great present!', present))
 	.catch((error) => console.log('No present :(', error));
+
+function getPresent() {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			resolve('Your present!');
+		}, 5000); // 5 seconds
+	});
+}
