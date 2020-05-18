@@ -18,3 +18,11 @@ function getPresent() {
 }
 
 getPresent().then(returnToTheShop).then(buyNewiPhone).then((iPhone) => iPhone.openTypeOfWeb());
+
+const myPromise = new Promise((resolve, reject) => {
+	setTimeout(() => resolve('Gotowe!'), 5000);
+});
+
+setTimeout(() => {
+	myPromise.then((val) => console.log(val));
+}, 6000);
