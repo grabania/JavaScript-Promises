@@ -50,16 +50,19 @@ const registerUser = (callback) => {
 	}, 400);
 };
 
-const sendEmail = () => {
+const sendEmail = (callback) => {
 	setTimeout(() => {
 		console.log('4. send email');
+		callback();
 	}, 200);
 };
 
 getUserData(() => {
 	validateData(() => {
 		registerUser(() => {
-			sendEmail();
+			sendEmail(() => {
+				console.log('end!');
+			});
 		});
 	});
 });
