@@ -29,9 +29,10 @@
 
 //making appointment
 
-const getUserData = () => {
+const getUserData = (callback) => {
 	setTimeout(() => {
 		console.log('1. get user data');
+		callback();
 	}, 800);
 };
 
@@ -53,7 +54,7 @@ const sendEmail = () => {
 	}, 200);
 };
 
-getUserData();
-validateData();
-registerUser();
-sendEmail();
+getUserData(validateData);
+
+// registerUser();
+// sendEmail();
