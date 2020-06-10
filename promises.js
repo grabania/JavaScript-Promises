@@ -27,42 +27,54 @@
 // 	myPromise.then((val) => console.log(val));
 // }, 6000);
 
-//making appointment
-
-const getUserData = (callback) => {
+new Promise((resolve, reject) => {
 	setTimeout(() => {
-		console.log('1. get user data');
-		callback();
+		console.log('working...');
+		resolve('this is from promise');
 	}, 800);
-};
-
-const validateData = (callback) => {
-	setTimeout(() => {
-		console.log('2. validate');
-		callback();
-	}, 900);
-};
-
-const registerUser = (callback) => {
-	setTimeout(() => {
-		console.log('3. register');
-		callback();
-	}, 400);
-};
-
-const sendEmail = (callback) => {
-	setTimeout(() => {
-		console.log('4. send email');
-		callback();
-	}, 200);
-};
-
-getUserData(() => {
-	validateData(() => {
-		registerUser(() => {
-			sendEmail(() => {
-				console.log('end!');
-			});
-		});
-	});
+}).then((response) => {
+	console.log('end!');
+	console.log(response);
 });
+
+/*
+ *  Making appointment - use Promise instead callbacks in the code below:
+ */
+
+// const getUserData = (callback) => {
+// 	setTimeout(() => {
+// 		console.log('1. get user data');
+// 		callback();
+// 	}, 800);
+// };
+
+// const validateData = (callback) => {
+// 	setTimeout(() => {
+// 		console.log('2. validate');
+// 		callback();
+// 	}, 900);
+// };
+
+// const registerUser = (callback) => {
+// 	setTimeout(() => {
+// 		console.log('3. register');
+// 		callback();
+// 	}, 400);
+// };
+
+// const sendEmail = (callback) => {
+// 	setTimeout(() => {
+// 		console.log('4. send email');
+// 		callback();
+// 	}, 200);
+// };
+
+// getUserData(() => {
+// 	validateData(() => {
+// 		registerUser(() => {
+// 			sendEmail(() => {
+// 				console.log('end!');
+// 			});
+// 		});
+// 	});
+// });
