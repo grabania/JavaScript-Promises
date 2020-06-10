@@ -43,9 +43,10 @@ const validateData = (callback) => {
 	}, 900);
 };
 
-const registerUser = () => {
+const registerUser = (callback) => {
 	setTimeout(() => {
 		console.log('3. register');
+		callback();
 	}, 400);
 };
 
@@ -57,9 +58,8 @@ const sendEmail = () => {
 
 getUserData(() => {
 	validateData(() => {
-		registerUser();
+		registerUser(() => {
+			sendEmail();
+		});
 	});
 });
-
-// ;
-// sendEmail();
