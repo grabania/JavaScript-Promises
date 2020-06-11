@@ -27,15 +27,15 @@
 // 	myPromise.then((val) => console.log(val));
 // }, 6000);
 
-new Promise((resolve, reject) => {
-	setTimeout(() => {
-		console.log('working...');
-		resolve('this is from promise');
-	}, 800);
-}).then((response) => {
-	console.log('end!');
-	console.log(response);
-});
+// new Promise((resolve, reject) => {
+// 	setTimeout(() => {
+// 		console.log('working...');
+// 		resolve('this is from promise');
+// 	}, 800);
+// }).then((response) => {
+// 	console.log('end!');
+// 	console.log(response);
+// });
 
 /*
  *  Making appointment - use Promise instead callbacks in the code below:
@@ -78,3 +78,13 @@ new Promise((resolve, reject) => {
 // 		});
 // 	});
 // });
+
+const getUserData = () => {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			console.log('1. get user data');
+			resolve();
+		}, 800);
+	});
+};
+
