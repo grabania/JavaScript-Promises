@@ -88,3 +88,33 @@ const getUserData = () => {
 	});
 };
 
+const validateData = () => {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			console.log('2. validate');
+			resolve();
+		}, 900);
+	});
+};
+
+const registerUser = () => {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			console.log('3. register');
+			resolve();
+		}, 400);
+	});
+};
+
+const sendEmail = (callback) => {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			console.log('4. send email');
+			resolve();
+		}, 200);
+	});
+};
+
+getUserData().then(validateData).then(registerUser).then(sendEmail).then(() => {
+	console.log('end!');
+});
