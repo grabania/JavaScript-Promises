@@ -110,11 +110,12 @@ const sendEmail = (callback) => {
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {
 			console.log('4. send email');
-			resolve();
+			resolve('Email has been sent');
 		}, 200);
 	});
 };
 
-getUserData().then(validateData).then(registerUser).then(sendEmail).then(() => {
+getUserData().then(validateData).then(registerUser).then(sendEmail).then((res) => {
 	console.log('end!');
+	console.log(res);
 });
