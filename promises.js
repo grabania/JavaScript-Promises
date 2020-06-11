@@ -83,7 +83,7 @@ const getUserData = () => {
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {
 			console.log('1. get user data');
-			resolve();
+			resolve({ name: 'John' });
 		}, 800);
 	});
 };
@@ -115,7 +115,14 @@ const sendEmail = (callback) => {
 	});
 };
 
-getUserData().then(validateData).then(registerUser).then(sendEmail).then((res) => {
-	console.log('end!');
-	console.log(res);
-});
+getUserData()
+	.then((res) => {
+		console.log(res);
+		validateData(res);
+	})
+	.then(registerUser)
+	.then(sendEmail)
+	.then((res) => {
+		console.log('end!');
+		console.log(res);
+	});
